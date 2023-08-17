@@ -1,0 +1,260 @@
+// Varibles
+$primary: #ddad2f;
+$accent: #222;
+$border-radius: 7px;
+// Mixins
+
+@mixin display {
+  font-family: "Instrument Sans", sans-serif;
+}
+@mixin body {
+  font-family: "Roboto", sans-serif;
+}
+.display {
+  @include display();
+}
+.body {
+  @include body();
+}
+@mixin sm {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin xl2 {
+  @media (min-width: 1536px) {
+    @content;
+  }
+}
+
+@mixin shadow {
+  /* Primary Shadow */
+  box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.17);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include body();
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include display();
+  font-weight: 600;
+}
+h1,
+.h1 {
+  font-size: 36px;
+  line-height: normal;
+  @include md {
+    font-size: 60px;
+  }
+}
+h2,
+.h2 {
+  font-size: 30px;
+  line-height: normal;
+  @include md {
+    font-size: 48px;
+  }
+}
+h3,
+.h3 {
+  font-size: 25px;
+  line-height: normal;
+  @include md {
+    font-size: 40px;
+  }
+}
+h4,
+.h4 {
+  font-size: 18px;
+  line-height: normal;
+  @include md {
+    font-size: 32px;
+  }
+}
+h5,
+.h5 {
+  font-size: 16px;
+  line-height: normal;
+  @include md {
+    font-size: 26px;
+  }
+}
+h6,
+.h6 {
+  font-size: 16px;
+  line-height: normal;
+  @include md {
+    font-size: 20px;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+.wrap {
+  //   overflow-x: hidden;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  @include sm {
+    max-width: 640px;
+  }
+  @include md {
+    max-width: 768px;
+  }
+  @include lg {
+    max-width: 1024px;
+  }
+  @include xl {
+    max-width: 1280px;
+  }
+  @include xl2 {
+    max-width: 1536px;
+  }
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  &:hover {
+    color: $primary;
+  }
+}
+b {
+  font-weight: 600;
+}
+.button {
+  border-radius: $border-radius;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(
+    --gradient,
+    linear-gradient(131deg, #ddad2f 0%, #ffe08f 100%)
+  );
+  color: $accent;
+  padding: 15px 42px;
+  font-weight: 700;
+  &:hover {
+    color: $accent;
+    background: var(
+      --gradient,
+      linear-gradient(180deg, #ddad2f 0%, #ffe08f 100%)
+    );
+  }
+  &--outline {
+    background: none;
+    border: 2px solid $primary;
+    color: $primary;
+  }
+}
+
+p {
+  line-height: 26px;
+  margin: 0;
+}
+.section {
+  padding: 50px 0;
+  overflow-x: hidden;
+  @include md {
+    padding: 70px 0;
+  }
+  @include lg {
+    padding: 110px 0;
+  }
+  &__title {
+    @extend .h2, .display;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 40px;
+    &--white {
+      color: #fff;
+    }
+    &--left {
+      text-align: left;
+    }
+    @include lg {
+      margin-bottom: 80px;
+    }
+  }
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 40px;
+    gap: 20px;
+    .section__title {
+      text-align: left;
+      margin-bottom: 0;
+    }
+    .section__desc {
+      width: 100%;
+    }
+    @include lg {
+      flex-direction: row;
+      margin-bottom: 70px;
+      gap: 40px;
+      .section__title {
+        width: 50%;
+      }
+      .section__desc {
+        width: 50%;
+      }
+    }
+  }
+  &.no-pad-top {
+    padding-top: 0;
+  }
+}
+
+.highlight {
+  color: $primary;
+  font-weight: 600;
+}
+
+.hero {
+  @include xl {
+    &--second {
+      position: relative;
+      .hero__left {
+        max-width: 720px;
+      }
+      .hero__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 700px;
+        max-width: none;
+      }
+    }
+  }
+}
