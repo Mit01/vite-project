@@ -747,6 +747,7 @@
       background: url("/images/bullet.svg");
       background-size: contain;
       background-position: center;
+      flex-shrink: 0;
     }
   }
   &--extra {
