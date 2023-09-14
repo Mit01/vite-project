@@ -1040,3 +1040,37 @@
     }
   }
 }
+
+.section--moneyback{
+  padding: 0;
+  background-image: url(/images/bg-earning.png);
+  background-attachment: fixed;
+}
+.moneyback{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__title{
+    @extend .h2;
+    margin-bottom: 20px;
+  }
+  &__subtitle{
+    @extend .h4;
+    margin-bottom: 20px;
+  }
+  &__desc{
+    margin-bottom: 20px;
+    max-width: 520px;
+  }
+  &__content{
+    padding: 6rem 0 6rem 0;
+  }
+  @include lg{
+    flex-direction: row;
+    align-items: flex-end;
+
+    &__content{
+      width: 60%;
+    }
+  }
+}

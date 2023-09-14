@@ -80,7 +80,7 @@ $(function () {
 });
 
 function updateTimer() {
-  let future = Date.parse("sept 2, 2023 11:30:00");
+  let future = Date.parse("nov 2, 2023 11:30:00");
   let now = new Date();
   let diff = future - now;
 
